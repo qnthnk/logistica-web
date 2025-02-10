@@ -23,27 +23,7 @@ const PresidenciaPartido2024 = () => {
         getData();
     }, [])
     
-    const option = {
-        tooltip: { trigger: 'item', },
-       
-        series: [{
-            name: "", type: 'pie', radius: '65%',
-            data: [
-                { value: 16.04, name: '' },
-                { value: 9.54, name: '' },
-                { value: 1.86, name: '' },
-                { value: 6.46, name: '' },
-                { value: 7.78, name: '' },
-                { value: 45.52, name: '' },
-                { value: 10.32, name: '' },
-                { value: 2.33, name: '' },
-             
-            ],
-            emphasis: {
-                itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)', },
-            },
-        },],
-    };
+    
     return (
         <>
         <div className='row'>
@@ -57,36 +37,50 @@ const PresidenciaPartido2024 = () => {
                             <th className="table-dark" scope="col">Lugar</th>
                         </tr>
                     </thead>
-                    {dataToFill &&(dataToFill.votacionPartidosConDistribucion ? dataToFill.votacionPartidosConDistribucion.map((item, index) => {
-                return (
-                    <tbody key={index}  >
-                        <tr className='border-dark border-1 table-stripped'>
-                            <th scope="row">
-                                <img alt="" style={{height: "50px", width: "auto"}} className="imagen-candidato-movil" src={`https://computos2024.ine.mx/assets/img/partidos${item.emblemaPartido}`}/>
-
-                                                </th>
-                                                <td className='bg-info-subtle'>
-                                                    <p className="f17">{(item.total).toLocaleString()}</p>
-                                                </td>
-                                                <td>
-                                                    <p className="f17">{(item.porcentaje).toFixed(2)}%</p>
-                                                </td >
-                                                {/* ranking */}
-                                                <td><p className="f17">i</p></td>
-
-                                            </tr>
-                                        </tbody>
-)}):
-(
-                                    <div>
-                                        <h5>Cargando</h5>
-                                    </div>
-                                )
-                        )
-                    }
+                {dataToFill && dataToFill.votacionPartidosConDistribucion ? (//FALTA FILTRAR PARA QUE NO APAREZCAN VOTOS NULOS Y CANDIDATOS NO REGISTRADOS
+                    <tbody>
+                        {dataToFill.votacionPartidosConDistribucion.map((item, index) => (
+                            <tr key={index} className='border-dark border-1 table-stripped'>
+                                <th scope="row">
+                                    <img alt="" style={{height: "50px", width: "auto"}} className="imagen-candidato-movil" src={`https://computos2024.ine.mx/assets/img/partidos${item.emblemaPartido}`}/>
+                                </th>
+                                <td className='bg-info-subtle'>
+                                    <p className="f17">{(item.total).toLocaleString()}</p>
+                                </td>
+                                <td>
+                                    <p className="f17">{(item.porcentaje).toFixed(2)}%</p>
+                                </td>
+                                {/* ranking */}
+                                <td><p className="f17">i</p></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                ) : (
+                    <div><h5>Cargando</h5></div>
+                )}
                 </table>
             </div>
-            <ReactECharts option={option} style={{ height: '400px', width: '100%' }} className='col'/>
+            
+    
+                    <ReactECharts 
+                        className='col'
+                        option={{//FALTA MAPEAR EL COLOR. NO ENCONTRE EN QUE PARTE SE SETEA EL COLOR DE CADA SLICE DEL PIE (API:colorPartido)
+                                tooltip: { trigger: 'item' },
+                                series: [{
+                                name: "", type: 'pie', radius: '65%',
+                                data: dataToFill && dataToFill.votacionPartidosConDistribucion 
+                                    ? dataToFill.votacionPartidosConDistribucion.map((item) => ({
+                                                value: item.porcentaje, name: item.nombrePartido //DATA DE LA GRAFICA MAPEADA
+                                    })) : [],
+                                emphasis: {
+                                    itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)' },
+                                            },
+                                    }],
+                                 }} 
+                        style={{ height: '400px', width: '100%' }} 
+                    />
+    
+   
         </div>
         </>
     )
