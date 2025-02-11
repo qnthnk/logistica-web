@@ -81,7 +81,7 @@ const Navbar = () => {
 
                         }
 
-                        /* {
+                        {/* {
                             !token && (
                                 <li className="nav-item">
                                     <Link className={isActive('/loginregister')} to="/loginregister">Registrate</Link>
