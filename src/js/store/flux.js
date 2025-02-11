@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             askOpenAi: async (question) => {
                 const apiKey = process.env.REACT_APP_API_KEY
                 try {
-                  let response = await fetch('http://localhost:5000/legislacion_openai', {
+                  let response = await fetch('https://e3digital.onrender.com/legislacion_openai', {
                     method:"POST",
                     body: JSON.stringify({'question':question}),
                     headers:{
