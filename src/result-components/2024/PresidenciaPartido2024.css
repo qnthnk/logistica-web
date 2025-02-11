@@ -1,0 +1,45 @@
+/* PresidenciaPartido2024.css */
+
+/* Contenedor principal para la tabla y el gráfico */
+.presidencia-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  /* Asignamos que ambos contenedores ocupen espacio equilibrado */
+  .table-container,
+  .chart-container {
+    flex: 1;
+  }
+  
+  /* Opcional: fijar ancho mínimo para que se vea bien en pantallas grandes */
+  .table-container {
+    min-width: 300px;
+  }
+  .chart-container {
+    min-width: 300px;
+  }
+  
+  /* Estilos para que la imagen se ajuste y la tabla se vea ordenada */
+  .imagen-candidato-movil {
+    max-height: 50px;
+    width: auto;
+  }
+  
+  /* Media queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .presidencia-container {
+      flex-direction: column;
+    }
+    .table-container,
+    .chart-container {
+      width: 100%;
+    }
+    /* Opcional: centrar el gráfico */
+    .chart-container {
+      margin-top: 20px;
+    }
+  }
+  

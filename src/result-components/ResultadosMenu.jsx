@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import menuData from "../menu_resultados.json"; // Importamos el JSON
-
+import React, { useState } from "react";
+import menuData from "../menu_resultados.json";
 
 // Importación de todos los componentes posibles
 import SenaduriasVotosEntidades2018 from "./2018/SenaduriasVotosEntidades2018";
@@ -22,139 +21,119 @@ import PresidenciaCandidatura2024 from "./2024/PresidenciaCandidatura2024";
 
 import PieChart from "./2024/PieChart";
 
-
 const ResultadosMenu = () => {
-  const [currentMenu, setCurrentMenu] = useState(menuData);
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
-  const [selectedComponent, setSelectedComponent] = useState(null); // Para almacenar el componente seleccionado
+  // selectedPath guarda la selección de cada nivel (por ejemplo: ["federal", "2018", "senadurias", ...])
+  const [selectedPath, setSelectedPath] = useState([]);
 
-  const handleSelect = (option) => {
-    if (currentMenu[option]) {
-      setBreadcrumbs([...breadcrumbs, option]);
-      setCurrentMenu(currentMenu[option]);
-    } else {
-      alert("No hay más opciones disponibles para esta selección.");
+  // Función que recorre el menú para obtener el objeto correspondiente a un nivel dado
+  const getMenuAtLevel = (level) => {
+    let menu = menuData;
+    for (let i = 0; i < level; i++) {
+      const key = selectedPath[i];
+      if (menu && menu[key]) {
+        menu = menu[key];
+      } else {
+        menu = null;
+        break;
+      }
     }
+    return menu;
   };
 
-  const goBack = () => {
-    if (breadcrumbs.length > 0) {
-      const newBreadcrumbs = [...breadcrumbs];
-      newBreadcrumbs.pop();
-      const newMenu = newBreadcrumbs.reduce((acc, key) => acc[key], menuData);
-      setCurrentMenu(newMenu);
-      setBreadcrumbs(newBreadcrumbs);
-    }
+  // Actualiza el selectedPath truncando desde el nivel modificado y agregando la nueva selección.
+  const handleSelectChange = (level, value) => {
+    setSelectedPath((prev) => {
+      const newPath = prev.slice(0, level);
+      newPath[level] = value;
+      return newPath;
+    });
   };
 
-  const handleConfirm = () => {
-    const currentPath = breadcrumbs.join(" > "); // Obtiene la ruta seleccionada como string
+  // Genera los selects dinámicamente según el menú anidado.
+  const renderSelects = () => {
+    const selects = [];
+    let menu = menuData;
+    // Iteramos en cada nivel mientras haya opciones en el menú
+    for (let level = 0; menu && typeof menu === "object" && Object.keys(menu).length > 0; level++) {
+      const options = Object.keys(menu);
+      selects.push(
+        <div key={`level-${level}-${selectedPath[level] || "none"}`} className="mb-3">
+          <select
+            className="form-select"
+            value={selectedPath[level] || ""}
+            onChange={(e) => handleSelectChange(level, e.target.value)}
+          >
+            <option value="">Seleccioná una opción</option>
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+      );
+      // Si no se seleccionó nada en este nivel, dejamos de generar más selects.
+      if (!selectedPath[level]) break;
+      menu = menu[selectedPath[level]];
+    }
+    return selects;
+  };
 
-    // Renderiza el componente correspondiente según la selección
-    switch (currentPath) {
+  // Construimos la ruta actual como string (ejemplo: "federal > 2018 > senadurias > votos por entidades")
+  const currentPathStr = selectedPath.join(" > ");
+
+  // Determinamos qué componente renderizar según la ruta seleccionada.
+  const getComponentForPath = (pathStr) => {
+    switch (pathStr) {
       case "federal > 2018 > senadurias > votos por entidades":
-        setSelectedComponent(<SenaduriasVotosEntidades2018 />);
-        break;
+        return <SenaduriasVotosEntidades2018 />;
       case "federal > 2018 > senadurias > votos por partido politico":
-        setSelectedComponent(<SenaduriasVotosPartido2018 />);
-        break;
+        return <SenaduriasVotosPartido2018 />;
       case "federal > 2018 > diputaciones > votos por distritos":
-        setSelectedComponent(<DiputacionesVotosDistritos2018 />);
-        break;
+        return <DiputacionesVotosDistritos2018 />;
       case "federal > 2018 > diputaciones > votos por partidos politicos y candidatura independiente":
-        setSelectedComponent(<DiputacionesVotosPartidos2018 />);
-        break;
+        return <DiputacionesVotosPartidos2018 />;
       case "federal > 2018 > presidencia > partido":
-        setSelectedComponent(<PresidenciaPartido2018 />);
-        break;
+        return <PresidenciaPartido2018 />;
       case "federal > 2018 > presidencia > candidatura":
-        setSelectedComponent(<PresidenciaCandidatura2018 />);
-        break;
+        return <PresidenciaCandidatura2018 />;
       case "federal > 2021 > diputaciones > votos por distritos":
-        setSelectedComponent(<DiputacionesVotosDistritos2021 />);
-        break;
+        return <DiputacionesVotosDistritos2021 />;
       case "federal > 2021 > diputaciones > votos por partidos politicos y candidatura independiente":
-        setSelectedComponent(<DiputacionesVotosPartidos2021 />);
-        break;
+        return <DiputacionesVotosPartidos2021 />;
       case "federal > 2024 > senadurias > votos por entidades":
-        setSelectedComponent(<SenaduriasVotosEntidades2024 />);
-        break;
+        return <SenaduriasVotosEntidades2024 />;
       case "federal > 2024 > senadurias > votos por partido politico":
-        setSelectedComponent(<SenaduriasVotosPartido2024 />);
-        break;
+        return <SenaduriasVotosPartido2024 />;
       case "federal > 2024 > diputaciones > votos por distritos":
-        setSelectedComponent(<DiputacionesVotosDistritos2024 />);
-        break;
+        return <DiputacionesVotosDistritos2024 />;
       case "federal > 2024 > diputaciones > votos por partidos politicos y candidatura independiente":
-        setSelectedComponent(<DiputacionesVotosPartidos2024 />);
-        break;
+        return <DiputacionesVotosPartidos2024 />;
       case "federal > 2024 > presidencia > partido":
-        setSelectedComponent(<PresidenciaPartido2024 />);
-        break;
+        return <PresidenciaPartido2024 />;
       case "federal > 2024 > presidencia > candidatura":
-        setSelectedComponent(<PresidenciaCandidatura2024 />);
-        break;
+        return <PresidenciaCandidatura2024 />;
       default:
-        alert("Ruta no mapeada. Mostrando un componente por defecto.");
-        setSelectedComponent(<div>Componente no encontrado</div>);
+        return null;
     }
   };
 
-  // Asegurar que el scroll esté arriba cuando se renderiza un componente
-  useEffect(() => {
-    if (selectedComponent) {
-      window.scrollTo(0, 0); // Forzar scroll al tope
-    }
-  }, [selectedComponent]);
+  const selectedComponent = getComponentForPath(currentPathStr);
 
   return (
-    <div className="home-wrapper">
+    <div className="container">
+      <h2 className="mt-4">Resultados</h2>
+      {/* Siempre se muestran los selects */}
+      <div className="mb-4">{renderSelects()}</div>
+      {/* Se muestra el componente correspondiente o un mensaje de aviso */}
       {selectedComponent ? (
-        // Renderizar el componente seleccionado
-        <div className="container-fluid text-center">
-          <h2 className="border rounded-top mb-4 card-title fw-bolder bg-light border rounded-top ">Resultados</h2>
-          <h4 className="border rounded-bottom bg-light text-capitalize border rounded-bottom">{breadcrumbs.join(" · ") || "Inicio"}</h4>
-        
-          <div className="row home-wrapper" >
-          {selectedComponent}
-          </div>
-        </div>
+        <div className="result-component">{selectedComponent}</div>
       ) : (
-        // Mostrar el menú si no hay componente seleccionado
-        
-        <div className="home-wrapper position-absolute top-50 start-50 translate-middle">
-          
-        <div className="home-content d-flex flex-column bg-dark-subtle text-center">
-          
-          <h3 className=" border rounded-top fw-bolder bg-light text-capitalize">Resultados</h3>
-          <h5 className=" border rounded-bottom bg-light text-capitalize">{breadcrumbs.join(" · ") || "Inicio"}</h5>
-          <div>
-            
-            <ul className="list-unstyled">
-              {Object.keys(currentMenu).map((key) => (
-                <li key={key} className="mb-2">
-                  <button className="btn btn-dark new-button text-capitalize" onClick={() => handleSelect(key)}>
-                    {key}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="mt-4">
-            <button className="btn btn-secondary me-2" onClick={goBack} disabled={breadcrumbs.length === 0}>
-              Volver
-            </button>
-            <button className="btn btn-warning" onClick={handleConfirm} disabled={breadcrumbs.length === 0}>
-              Confirmar
-            </button>
-          </div>
-        </div>
-        
+        <div className="alert alert-info">
+          Por favor, seleccioná todas las opciones para ver el resultado.
         </div>
       )}
-     
     </div>
-    
   );
 };
 
