@@ -18,13 +18,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                 try {
                   let response = await fetch('https://e3digital.onrender.com/legislacion_openai', {
                     method:"POST",
-                    body: JSON.stringify({'question':question}),
+                    body: JSON.stringify({question}),
+                    mode:'cors',
                     headers:{
                         'Content-Type':'application/json',
                         'Authorization': apiKey
                     }
                   })
                   console.log("respuesta", response)
+                  console.log(response.ok)
                   if(!response.ok){
                     throw new Error("Algo malió sal...")
                   }
