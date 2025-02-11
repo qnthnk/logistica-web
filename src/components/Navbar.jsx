@@ -67,13 +67,13 @@ const Navbar = () => {
                         {
                             token && (
                                 <li className="nav-item">
-                                    <Link className={isActive('/utilidades')} to="/utilidades">Herramientas</Link>
+                                    <Link className={isActive('/utilidades')} to="/utilidades">Afiliaciones</Link>
                                 </li>
                             )
                         }
-                        {/* <li className="nav-item">
-                            <Link className={isActive('/plus')} to="/plus">Saber más</Link>
-                        </li> */}
+                        <li className="nav-item">
+                            <Link className={isActive('/legislacion')} to="/legislacion">Legislación</Link>
+                        </li>
                         {/* {
                             !token && (
                                 <li className="nav-item">

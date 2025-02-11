@@ -9,9 +9,36 @@ const getState = ({ getStore, getActions, setStore }) => {
             userName: "",
             user: { username: "", dni: "", admin: "", email: "", url_image: "" },
             trigger: false,
-            dataEstadisticas: {}
+            dataEstadisticas: {},
+            currentResponse: {}
         },
         actions: {
+            askOpenAi: async (question) => {
+                const apiKey = process.env.REACT_APP_API_KEY
+                try {
+                  let response = await fetch('http://localhost:5000/legislacion_openai', {
+                    method:"POST",
+                    body: JSON.stringify({'question':question}),
+                    headers:{
+                        'Content-Type':'application/json',
+                        'Authorization': apiKey
+                    }
+                  })
+
+                  if(!response.ok){
+                    throw new Error("Algo malió sal...")
+                  }
+
+                  let data = await response.json()
+                  if(data){
+                    return data.answer
+                  }
+
+                } catch (error) {
+                    console.error(error)
+                    return false
+                }
+            },
             getAfiliacion: async (payload) => {
                 const token = localStorage.getItem('token');
                 const actions = getActions(); // Para acceder al logout directamente

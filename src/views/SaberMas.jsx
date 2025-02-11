@@ -10,7 +10,7 @@ const SaberMas = () => {
       <Navbar />
       <div className="saber-mas-container">
         <div className="saber-mas-content">
-          <h2>Sobre Nosotros</h2>
+          <h2>Legislación</h2>
           <div className="saber-mas-section">
             <div className="saber-mas-text">
               <p>
