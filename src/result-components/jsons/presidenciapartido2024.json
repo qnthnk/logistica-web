@@ -1,0 +1,472 @@
+{
+    "horaCorte": "06:55",
+    "fechaCorte": "08 junio 2024",
+    "cortePrueba": false,
+    "isBienvenidoActivo": false,
+    "isRedesSocialesActivo": true,
+    "corteEspeciales": false,
+    "archivoCorte": "20240608_0655_COMPUTOS.zip",
+    "nivelNodo": "NACIONAL",
+    "idNodo": 100,
+    "nombreNodo": "",
+    "totalActas": 170766,
+    "totalActasUrbanas": 115146,
+    "totalActasRurales": 55620,
+    "actasContabilizadas": {
+        "total": 170766,
+        "porcentaje": 100
+    },
+    "actasCapturadas": {
+        "total": 0,
+        "porcentaje": 0
+    },
+    "actasCotejo": 54224,
+    "porcentajeActasCotejo": "31.7533",
+    "actasRecuento": 116397,
+    "actasCasillaNoInstalada": 23,
+    "actasPaqueteNoEntregado": 122,
+    "actasPendiente": 0,
+    "listaNominalOficial": 98468994,
+    "listaNominal": 98468994,
+    "porcentajeParticipacionCiudadana": 61.0498,
+    "porcentajeTotalVotos": 100,
+    "totalVotos": 60115184,
+    "votosAcumulados": {
+        "total": 58631926,
+        "porcentaje": 97.5326
+    },
+    "totalVotosVN": 59930858,
+    "totalVotosVE": 184326,
+    "totalVotosBasicasMR": 59125184,
+    "totalVotosEspecialesMR": 990000,
+    "idPartidoCoalicionMayoriaVotos": 81,
+    "idPartidoMayoriaVotos": 18,
+    "votacionPartidosConDistribucion": [
+        {
+            "idPartido": 11,
+            "nombrePartido": "PARTIDO ACCIÓN NACIONAL",
+            "siglasPartido": "PAN",
+            "emblemaPartido": "/logos-partidos/PAN.png",
+            "colorPartido": "0055B1",
+            "total": 9644918,
+            "porcentaje": 16.044,
+            "totalVN": 9577009,
+            "totalVE": 67909
+        },
+        {
+            "idPartido": 12,
+            "nombrePartido": "PARTIDO REVOLUCIONARIO INSTITUCIONAL",
+            "siglasPartido": "PRI",
+            "emblemaPartido": "/logos-partidos/PRI.png",
+            "colorPartido": "009145",
+            "total": 5736759,
+            "porcentaje": 9.5429,
+            "totalVN": 5725299,
+            "totalVE": 11460
+        },
+        {
+            "idPartido": 13,
+            "nombrePartido": "PARTIDO DE LA REVOLUCIÓN DEMOCRÁTICA",
+            "siglasPartido": "PRD",
+            "emblemaPartido": "/logos-partidos/PRD.png",
+            "colorPartido": "F9CE3F",
+            "total": 1121020,
+            "porcentaje": 1.8647,
+            "totalVN": 1113871,
+            "totalVE": 7149
+        },
+        {
+            "idPartido": 15,
+            "nombrePartido": "PARTIDO VERDE ECOLOGISTA DE MÉXICO",
+            "siglasPartido": "PVEM",
+            "emblemaPartido": "/logos-partidos/PVEM.png",
+            "colorPartido": "7FB34B",
+            "total": 4677057,
+            "porcentaje": 7.7801,
+            "totalVN": 4668555,
+            "totalVE": 8502
+        },
+        {
+            "idPartido": 14,
+            "nombrePartido": "PARTIDO DEL TRABAJO",
+            "siglasPartido": "PT",
+            "emblemaPartido": "/logos-partidos/PT.png",
+            "colorPartido": "FF0000",
+            "total": 3882813,
+            "porcentaje": 6.4589,
+            "totalVN": 3872901,
+            "totalVE": 9912
+        },
+        {
+            "idPartido": 16,
+            "nombrePartido": "MOVIMIENTO CIUDADANO",
+            "siglasPartido": "MC",
+            "emblemaPartido": "/logos-partidos/MC.png",
+            "colorPartido": "F78A30",
+            "total": 6204710,
+            "porcentaje": 10.3213,
+            "totalVN": 6200276,
+            "totalVE": 4434
+        },
+        {
+            "idPartido": 18,
+            "nombrePartido": "MORENA",
+            "siglasPartido": "MORENA",
+            "emblemaPartido": "/logos-partidos/MORENA.png",
+            "colorPartido": "A53634",
+            "total": 27364649,
+            "porcentaje": 45.5203,
+            "totalVN": 27291553,
+            "totalVE": 73096
+        },
+        {
+            "idPartido": 92,
+            "nombrePartido": "CANDIDATURAS NO REGISTRADAS",
+            "siglasPartido": "CNR",
+            "emblemaPartido": "Candidaturas no registradas",
+            "colorPartido": "D1D1D1",
+            "total": 83114,
+            "porcentaje": 0.1382,
+            "totalVN": 82421,
+            "totalVE": 693
+        },
+        {
+            "idPartido": 91,
+            "nombrePartido": "VOTOS NULOS",
+            "siglasPartido": "VN",
+            "emblemaPartido": "Votos nulos",
+            "colorPartido": "D1D1D1",
+            "total": 1400144,
+            "porcentaje": 2.3291,
+            "totalVN": 1398973,
+            "totalVE": 1171
+        }
+    ],
+    "votosCandidatoPartidoCoalicion": [
+        {
+            "idPartido": 16,
+            "nombrePartido": "MOVIMIENTO CIUDADANO",
+            "siglasPartido": "MC",
+            "emblemaPartido": "/logos-partidos/MC.png",
+            "colorPartido": "F78A30",
+            "idCandidatoPropietario": 1736,
+            "idCandidatoSuplente": 0,
+            "nombreCandidatoPropietario": "Jorge Álvarez Máynez",
+            "fotoCandidatoPropietario": "",
+            "nombreCandidatoSuplente": " ",
+            "idSubcoaliciones": [
+                16
+            ],
+            "idsSubMosaico": [],
+            "total": 6204710,
+            "porcentaje": 10.3213,
+            "totalVN": 6200276,
+            "totalVE": 4434
+        },
+        {
+            "idPartido": 80,
+            "nombrePartido": "FUERZA  Y CORAZÓN POR MÉXICO PAN_PRI_PRD",
+            "siglasPartido": "PAN_PRI_PRD",
+            "emblemaPartido": "/logos-partidos/PAN_PRI_PRD.png",
+            "colorPartido": "779ACD",
+            "idCandidatoPropietario": 689,
+            "idCandidatoSuplente": 0,
+            "nombreCandidatoPropietario": "Bertha Xóchitl Gálvez Ruiz",
+            "fotoCandidatoPropietario": "",
+            "nombreCandidatoSuplente": " ",
+            "idSubcoaliciones": [
+                11,
+                12,
+                13,
+                80,
+                51,
+                52,
+                53
+            ],
+            "idsSubMosaico": [
+                11,
+                12,
+                13
+            ],
+            "total": 16502697,
+            "porcentaje": 27.4517,
+            "totalVN": 16416179,
+            "totalVE": 86518
+        },
+        {
+            "idPartido": 81,
+            "nombrePartido": "SIGAMOS HACIENDO HISTORIA PVEM_PT_MORENA",
+            "siglasPartido": "PVEM_PT_MORENA",
+            "emblemaPartido": "/logos-partidos/PVEM_PT_MORENA.png",
+            "colorPartido": "E59492",
+            "idCandidatoPropietario": 3,
+            "idCandidatoSuplente": 0,
+            "nombreCandidatoPropietario": "Claudia Sheinbaum Pardo",
+            "fotoCandidatoPropietario": "",
+            "nombreCandidatoSuplente": " ",
+            "idSubcoaliciones": [
+                15,
+                14,
+                18,
+                81,
+                54,
+                55,
+                56
+            ],
+            "idsSubMosaico": [
+                14,
+                15,
+                18
+            ],
+            "total": 35924519,
+            "porcentaje": 59.7594,
+            "totalVN": 35833009,
+            "totalVE": 91510
+        },
+        {
+            "idPartido": 92,
+            "nombrePartido": "CANDIDATURAS NO REGISTRADAS",
+            "siglasPartido": "CNR",
+            "emblemaPartido": "Candidaturas no registradas",
+            "colorPartido": "D1D1D1",
+            "idCandidatoPropietario": 922,
+            "idCandidatoSuplente": 0,
+            "nombreCandidatoPropietario": "",
+            "fotoCandidatoPropietario": "",
+            "nombreCandidatoSuplente": " ",
+            "idSubcoaliciones": [],
+            "idsSubMosaico": [],
+            "total": 83114,
+            "porcentaje": 0.1382,
+            "totalVN": 82421,
+            "totalVE": 693
+        },
+        {
+            "idPartido": 91,
+            "nombrePartido": "VOTOS NULOS",
+            "siglasPartido": "VN",
+            "emblemaPartido": "Votos nulos",
+            "colorPartido": "D1D1D1",
+            "idCandidatoPropietario": 911,
+            "idCandidatoSuplente": 0,
+            "nombreCandidatoPropietario": "",
+            "fotoCandidatoPropietario": "",
+            "nombreCandidatoSuplente": " ",
+            "idSubcoaliciones": [],
+            "idsSubMosaico": [],
+            "total": 1400144,
+            "porcentaje": 2.3291,
+            "totalVN": 1398973,
+            "totalVE": 1171
+        }
+    ],
+    "entidadesHijas": [
+        {
+            "nivelNodo": "NACIONAL",
+            "idNodo": -1,
+            "nombreNodo": "Voto desde el extranjero",
+            "totalActas": 151,
+            "listaNominalOficial": 223961,
+            "listaNominal": 223961,
+            "porcentajeParticipacionCiudadana": 82.3027,
+            "totalVotos": 184326,
+            "votosAcumulados": {
+                "total": 182462,
+                "porcentaje": 98.9887
+            },
+            "entidadesContadasPM": {
+                "total": 0,
+                "porcentaje": null
+            }
+        }
+    ],
+    "votosEnElExtranjero": [
+        {
+            "idPartido": 11,
+            "nombrePartido": "PARTIDO ACCIÓN NACIONAL",
+            "siglasPartido": "PAN",
+            "emblemaPartido": "/logos-partidos/PAN.png",
+            "colorPartido": "0055B1",
+            "total": 63184,
+            "porcentaje": 34.2783,
+            "totalVN": -1,
+            "totalVE": 63184
+        },
+        {
+            "idPartido": 12,
+            "nombrePartido": "PARTIDO REVOLUCIONARIO INSTITUCIONAL",
+            "siglasPartido": "PRI",
+            "emblemaPartido": "/logos-partidos/PRI.png",
+            "colorPartido": "009145",
+            "total": 6889,
+            "porcentaje": 3.7374,
+            "totalVN": -1,
+            "totalVE": 6889
+        },
+        {
+            "idPartido": 13,
+            "nombrePartido": "PARTIDO DE LA REVOLUCIÓN DEMOCRÁTICA",
+            "siglasPartido": "PRD",
+            "emblemaPartido": "/logos-partidos/PRD.png",
+            "colorPartido": "F9CE3F",
+            "total": 2907,
+            "porcentaje": 1.577,
+            "totalVN": -1,
+            "totalVE": 2907
+        },
+        {
+            "idPartido": 15,
+            "nombrePartido": "PARTIDO VERDE ECOLOGISTA DE MÉXICO",
+            "siglasPartido": "PVEM",
+            "emblemaPartido": "/logos-partidos/PVEM.png",
+            "colorPartido": "7FB34B",
+            "total": 1749,
+            "porcentaje": 0.9488,
+            "totalVN": -1,
+            "totalVE": 1749
+        },
+        {
+            "idPartido": 14,
+            "nombrePartido": "PARTIDO DEL TRABAJO",
+            "siglasPartido": "PT",
+            "emblemaPartido": "/logos-partidos/PT.png",
+            "colorPartido": "FF0000",
+            "total": 2365,
+            "porcentaje": 1.283,
+            "totalVN": -1,
+            "totalVE": 2365
+        },
+        {
+            "idPartido": 16,
+            "nombrePartido": "MOVIMIENTO CIUDADANO",
+            "siglasPartido": "MC",
+            "emblemaPartido": "/logos-partidos/MC.png",
+            "colorPartido": "F78A30",
+            "total": 4434,
+            "porcentaje": 2.4055,
+            "totalVN": -1,
+            "totalVE": 4434
+        },
+        {
+            "idPartido": 18,
+            "nombrePartido": "MORENA",
+            "siglasPartido": "MORENA",
+            "emblemaPartido": "/logos-partidos/MORENA.png",
+            "colorPartido": "A53634",
+            "total": 65300,
+            "porcentaje": 35.4263,
+            "totalVN": -1,
+            "totalVE": 65300
+        },
+        {
+            "idPartido": 80,
+            "nombrePartido": "FUERZA  Y CORAZÓN POR MÉXICO PAN_PRI_PRD",
+            "siglasPartido": "PAN_PRI_PRD",
+            "emblemaPartido": "/logos-partidos/PAN_PRI_PRD.png",
+            "colorPartido": "779ACD",
+            "total": 12233,
+            "porcentaje": 6.6366,
+            "totalVN": -1,
+            "totalVE": 12233
+        },
+        {
+            "idPartido": 51,
+            "nombrePartido": "PAN_PRI",
+            "siglasPartido": "PAN_PRI",
+            "emblemaPartido": "/logos-partidos/PAN_PRI.png",
+            "colorPartido": "779ACD",
+            "total": 933,
+            "porcentaje": 0.5061,
+            "totalVN": -1,
+            "totalVE": 933
+        },
+        {
+            "idPartido": 52,
+            "nombrePartido": "PAN_PRD",
+            "siglasPartido": "PAN_PRD",
+            "emblemaPartido": "/logos-partidos/PAN_PRD.png",
+            "colorPartido": "779ACD",
+            "total": 311,
+            "porcentaje": 0.1687,
+            "totalVN": -1,
+            "totalVE": 311
+        },
+        {
+            "idPartido": 53,
+            "nombrePartido": "PRI_PRD",
+            "siglasPartido": "PRI_PRD",
+            "emblemaPartido": "/logos-partidos/PRI_PRD.png",
+            "colorPartido": "779ACD",
+            "total": 61,
+            "porcentaje": 0.033,
+            "totalVN": -1,
+            "totalVE": 61
+        },
+        {
+            "idPartido": 81,
+            "nombrePartido": "SIGAMOS HACIENDO HISTORIA PVEM_PT_MORENA",
+            "siglasPartido": "PVEM_PT_MORENA",
+            "emblemaPartido": "/logos-partidos/PVEM_PT_MORENA.png",
+            "colorPartido": "E59492",
+            "total": 18866,
+            "porcentaje": 10.2351,
+            "totalVN": -1,
+            "totalVE": 18866
+        },
+        {
+            "idPartido": 54,
+            "nombrePartido": "PVEM_PT",
+            "siglasPartido": "PVEM_PT",
+            "emblemaPartido": "/logos-partidos/PVEM_PT.png",
+            "colorPartido": "E59492",
+            "total": 264,
+            "porcentaje": 0.1432,
+            "totalVN": -1,
+            "totalVE": 264
+        },
+        {
+            "idPartido": 55,
+            "nombrePartido": "PVEM_MORENA",
+            "siglasPartido": "PVEM_MORENA",
+            "emblemaPartido": "/logos-partidos/PVEM_MORENA.png",
+            "colorPartido": "E59492",
+            "total": 712,
+            "porcentaje": 0.3862,
+            "totalVN": -1,
+            "totalVE": 712
+        },
+        {
+            "idPartido": 56,
+            "nombrePartido": "PT_MORENA",
+            "siglasPartido": "PT_MORENA",
+            "emblemaPartido": "/logos-partidos/PT_MORENA.png",
+            "colorPartido": "E59492",
+            "total": 2254,
+            "porcentaje": 1.2228,
+            "totalVN": -1,
+            "totalVE": 2254
+        },
+        {
+            "idPartido": 92,
+            "nombrePartido": "CANDIDATURAS NO REGISTRADAS",
+            "siglasPartido": "CNR",
+            "emblemaPartido": "Candidaturas no registradas",
+            "colorPartido": "D1D1D1",
+            "total": 693,
+            "porcentaje": 0.3759,
+            "totalVN": -1,
+            "totalVE": 693
+        },
+        {
+            "idPartido": 91,
+            "nombrePartido": "VOTOS NULOS",
+            "siglasPartido": "VN",
+            "emblemaPartido": "Votos nulos",
+            "colorPartido": "D1D1D1",
+            "total": 1171,
+            "porcentaje": 0.6352,
+            "totalVN": -1,
+            "totalVE": 1171
+        }
+    ]
+}

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'charts.css';
 import ReactECharts from 'echarts-for-react';
 import './PresidenciaPartido2024.css'; // Importamos el CSS de estilos
+// Importamos el JSON localmente
+import localData from '../jsons/presidenciapartido2024.json';
 
 const PresidenciaPartido2024 = () => {
   const [dataToFill, setDataToFill] = useState({});
@@ -9,10 +11,8 @@ const PresidenciaPartido2024 = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        let response = await fetch(`https://computos2024.ine.mx/assets/JSON/PRESIDENTE/NACIONAL/Presidente_NACIONAL.json`);
-        let data = await response.json();
-        console.log(data);
-        setDataToFill(data);
+
+        setDataToFill(localData);
       } catch (e) {
         console.error(e);
       }
