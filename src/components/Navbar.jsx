@@ -6,7 +6,7 @@ import logo2 from '../img/logo2_individual.png'
 
 const Navbar = () => {
     const { actions } = useContext(Context);
-    const [ contador , setContador ] = useState(0)
+    const [contador, setContador] = useState(0)
     const location = useLocation();
     const navigate = useNavigate();
     const token = localStorage.getItem('token')
@@ -20,10 +20,10 @@ const Navbar = () => {
         navigate('/')
     }
 
-    const handleShowRegister = () =>{
-        if(contador > 10){
+    const handleShowRegister = () => {
+        if (contador > 10) {
             navigate('/loginregister')
-        }else{
+        } else {
             setContador(prev => prev + 1)
         }
     }
@@ -71,10 +71,17 @@ const Navbar = () => {
                                 </li>
                             )
                         }
-                        <li className="nav-item">
-                            <Link className={isActive('/legislacion')} to="/legislacion">Legislación</Link>
-                        </li>
-                        {/* {
+                        {
+
+                            token && (
+                                <li className="nav-item">
+                                    <Link className={isActive('/legislacion')} to="/legislacion">Legislación</Link>
+                                </li>
+                            )
+
+                        }
+
+                        /* {
                             !token && (
                                 <li className="nav-item">
                                     <Link className={isActive('/loginregister')} to="/loginregister">Registrate</Link>
