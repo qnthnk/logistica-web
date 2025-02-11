@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         'Authorization': apiKey
                     }
                   })
-
+                  console.log("respuesta", response)
                   if(!response.ok){
                     throw new Error("Algo malió sal...")
                   }
