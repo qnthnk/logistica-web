@@ -20,6 +20,7 @@ const Home = () => {
                            <button className="btn btn-dark new-button" onClick={()=>navigate("./estadistica")}>Estadística</button>
                            <button className="btn btn-dark new-button" onClick={()=>navigate("./main")}>Cartografia</button>
                            <button className="btn btn-dark new-button" onClick={()=>navigate("./utilidades")}>Afiliaciones</button>
+                           <button className="btn btn-dark new-button" onClick={()=>navigate("./legislacion")}>Legislación</button>
                         </div>
                     </div>
                 </>
