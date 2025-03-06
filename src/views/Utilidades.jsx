@@ -25,8 +25,8 @@ const Utilidades = () => {
           {
             token ? (
                   <div>
-                      <div className="admin-container">
-                          <div className="admin-tabs">
+                      <div className="container">
+                          <div >
         {/* DESHABILITACION DE MENUS PARA QUE NO SE VEAN CORTADOS */}
                               {/* <button
                                   className={`tab-button ${activeTab === 'Afiliaciones' ? 'active' : ''}`}
@@ -41,7 +41,7 @@ const Utilidades = () => {
                                   Opcion 2
                               </button> */}
                           </div>
-                          <div className="admin-content bg-dark-subtle">
+                          <div >
                               {renderTabContent()}
                           </div>
                       </div>

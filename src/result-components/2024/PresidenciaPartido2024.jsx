@@ -36,7 +36,10 @@ const PresidenciaPartido2024 = () => {
   return (
     <>
       <div className="row presidencia-container">
-        <div className="card home-wrapper container-fluid col table-container">
+        <div className="col container">
+          <h2 className="heading">Presidencia 2024</h2>
+          <h3 className="subheading">Votos por partido</h3>
+          <div className="container">
           <table className="table table-fluid bg-light align-middle mb-1 m-1 stripped text-center p-2">
             <thead className="border-dark bg-dark border-1">
               <tr>
@@ -80,9 +83,9 @@ const PresidenciaPartido2024 = () => {
               </tbody>
             )}
           </table>
-        </div>
+       </div>
 
-        <div className="col chart-container">
+        <div className="col container">
           <ReactECharts
             option={{
               tooltip: { trigger: 'item' },
@@ -108,6 +111,7 @@ const PresidenciaPartido2024 = () => {
             style={{ height: '400px', width: '100%' }}
           />
         </div>
+      </div>
       </div>
     </>
   );

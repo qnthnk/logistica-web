@@ -34,31 +34,32 @@ const Afiliaciones = () => {
       {
         token ? (
 
-          <div className='afiliaciones-total '>
+          <div >
             <div className='title '>
-              <h2 className="border rounded-top mb-4 card-title fw-bolder bg-light border rounded-top ">Verifica Afiliación</h2>
+              <h2 className="heading">Verifica Afiliación</h2>
             </div>
-            <div className='inputs-box '>
+            <div className='former'>
               <div className="caja-input">
-                <span className='adjust '>Clave de elector</span>
+                <span className='subheading '>Clave de elector</span>
                 <input type="text" className='input' name="clave_elector" onChange={handlerafiliacion} placeholder="clave" aria-label="clave" aria-describedby="addon-wrapping" />
               </div>
               <div className="caja-input">
-                <span className='adjust'>Apellido paterno</span>
+                <span className='subheading'>Apellido paterno</span>
                 <input type="text" className='input' name="apellido_paterno" onChange={handlerafiliacion} placeholder="apellido paterno" aria-label="apellido paterno" aria-describedby="addon-wrapping" />
               </div>
               <div className="caja-input">
-                <span className='adjust'>Apellido materno</span>
+                <span className='subheading'>Apellido materno</span>
                 <input type="text" className='input' name="apellido_materno" onChange={handlerafiliacion} placeholder="apellido materno" aria-label="apellido materno" aria-describedby="addon-wrapping" />
               </div>
               <div className="caja-input">
-                <span className='adjust'>Nombre</span>
+                <span className='subheading'>Nombre completo</span>
                 <input type="text" className='input' name="nombre" onChange={handlerafiliacion} placeholder="nombre" aria-label="nombre" aria-describedby="addon-wrapping" />
               </div>
-            </div>
-            <button className='boton-consulta btn btn-warning' onClick={handleConsulta}>
+              <button className='login-button' onClick={handleConsulta}>
               Consultar
             </button>
+            </div>
+            
           </div>
 
         )

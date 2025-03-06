@@ -75,42 +75,46 @@ const Login = () => {
   }, []);
 
   return (
-    <div className='wrapper d-flex justify-content-center'>
-      <form
+    <div className='backpage'> 
+    <div className='container'>
+      <form className='forms'
         onSubmit={(e) => {
           e.preventDefault();
           handlerLogin();
         }}
       >
-        <h1>Login</h1>
-        <div className='input-box tex'>
+        <h1 className='heading'>Login</h1>
+        <div >
+          <div>
           <input
             type='email'
             placeholder='E-mail'
             id='email'
             value={email}
+            className='input'
             autoComplete='email'
             onChange={(e) => handlerSetEmail(e.target.value)}
             required
           />
-          <FaUser className='icon' />
+          </div>
         </div>
-        <div className='input-box'>
+        <div>
           <input
             type='password'
             placeholder='Contraseña'
             id='password'
             value={pass}
+            className='input'
             autoComplete='current-password'
             onChange={(e) => handlerSetPass(e.target.value)}
             required
           />
-          <FaLock className='icon' />
         </div>
+        <br/>
         {store.wrongPass && (
           <p style={{ color: 'white', fontSize: '18px' }}>Credencial/es incorrecta/s</p>
         )}
-        <div className='remember-forgot'>
+        <div className='rememberme'>
           <label>
             <input type='checkbox'
               name='rememberMe'
@@ -120,7 +124,7 @@ const Login = () => {
           </label>
           {/* <p>Olvidaste tu contraseña?</p> */}
         </div>
-        <button type='submit'>{isLoading ? (
+        <button className="login-button" type='submit'>{isLoading ? (
           <img
             src={gifLoading}
             alt='gift de carga'
@@ -132,6 +136,7 @@ const Login = () => {
           <p>No tienes cuenta? <span onClick={() => navigate('/loginregister')} style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>Registrate acá</span></p>
         </div> */}
       </form>
+    </div>
     </div>
   );
 };
