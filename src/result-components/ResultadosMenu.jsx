@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import menuData from "../menu_resultados.json";
+import"./ResultadosMenu.css";
 
 // Importación de todos los componentes posibles
 import SenaduriasVotosEntidades2018 from "./2018/SenaduriasVotosEntidades2018";
@@ -57,13 +58,13 @@ const ResultadosMenu = () => {
     for (let level = 0; menu && typeof menu === "object" && Object.keys(menu).length > 0; level++) {
       const options = Object.keys(menu);
       selects.push(
-        <div key={`level-${level}-${selectedPath[level] || "none"}`} className="mb-3">
+        <div key={`level-${level}-${selectedPath[level] || "none"}`} className="forms">
           <select
-            className="form-select"
+            className="input"
             value={selectedPath[level] || ""}
             onChange={(e) => handleSelectChange(level, e.target.value)}
           >
-            <option value="">Seleccioná una opción</option>
+            <option value="">Seleccione una opción</option>
             {options.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -122,15 +123,23 @@ const ResultadosMenu = () => {
 
   return (
     <div className="container">
-      <h2 className="mt-4">Resultados</h2>
+      <h2 className="heading">Resultados</h2>
       {/* Siempre se muestran los selects */}
-      <div className="mb-4">{renderSelects()}</div>
+      <div className="forms">{renderSelects()}</div>
       {/* Se muestra el componente correspondiente o un mensaje de aviso */}
       {selectedComponent ? (
+         <div>
+          <br/>
         <div className="result-component">{selectedComponent}</div>
+        <div/>
+      </div>
       ) : (
-        <div className="alert alert-info">
-          Por favor, seleccioná todas las opciones para ver el resultado.
+        
+        <div>
+          <br/>
+          <div className="alert alert-info">
+            Por favor, seleccione todas las opciones para ver el resultado.
+          </div>
         </div>
       )}
     </div>
