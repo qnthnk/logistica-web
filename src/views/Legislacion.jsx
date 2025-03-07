@@ -37,14 +37,14 @@ const Legislacion = () => {
     <div className="saber_mas_general d-flex flex-column align-items-center">
       <Navbar />
       <div className="saber-mas-container container my-4">
-        <div className="saber-mas-content">
-          <h2 className="text-center">Legislación</h2>
+        <div className="former">
+          <h2 className="heading">Legislación</h2>
           <p className="text-center">
-            Busca información relacionada con candidaturas y elecciones en México. Escribe tu consulta y presiona "Enviar" para obtener la legislación relevante.
+            Busca información relacionada con candidaturas y elecciones en México. Escribe tu consulta y presiona "Enviar".
           </p>
           <div className="form-group my-3">
             <textarea
-              className="form-control"
+              className="input"
               rows="4"
               placeholder="Escribe tu consulta aquí..."
               value={question}
@@ -53,7 +53,7 @@ const Legislacion = () => {
           </div>
           <div className="text-center">
             <button 
-              className="btn btn-primary" 
+              className="login-button" 
               onClick={handleEnviar} 
               disabled={loading}
             >

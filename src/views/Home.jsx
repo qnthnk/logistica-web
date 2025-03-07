@@ -17,7 +17,7 @@ const Home = () => {
             {token ? (
                  <div className='backpage'>
                     <div className='container'>
-                        <div className='former'>
+                        <div className='formers'>
                            <button className="login-button" onClick={()=>navigate("./estadistica")}>Estadística</button>
                            <button className="login-button" onClick={()=>navigate("./main")}>Cartografia</button>
                            <button className="login-button" onClick={()=>navigate("./utilidades")}>Afiliaciones</button>
