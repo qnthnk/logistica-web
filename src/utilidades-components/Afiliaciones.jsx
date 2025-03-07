@@ -38,7 +38,7 @@ const Afiliaciones = () => {
             <div className='title '>
               <h2 className="heading">Verifica Afiliación</h2>
             </div>
-            <div className='former'>
+            <div className='fondos'>
               <div className="caja-input">
                 <span className='subheading '>Clave de elector</span>
                 <input type="text" className='input' name="clave_elector" onChange={handlerafiliacion} placeholder="clave" aria-label="clave" aria-describedby="addon-wrapping" />
