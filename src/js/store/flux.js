@@ -70,7 +70,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }
 
                     if(!data.msg) throw new Error('algo salio mal en la solicitud')
-                    alert(data.msg)
+                    return data.msg
+                    
                 }catch(e){
                     console.error(e)
                 }
