@@ -7,6 +7,7 @@ import RedirectToHome from '../components/RedirectHome.jsx';
 const Afiliaciones = () => {
 
   const { actions } = useContext(Context)
+  const [response, setResponse] = useState("")
   const [afiliaciones, setAfiliaciones] = useState({
     clave_elector: "",
     apellido_paterno: "",
@@ -22,7 +23,12 @@ const Afiliaciones = () => {
 
   const handleConsulta = async () => {
     try {
-      actions.getAfiliacion(afiliaciones)
+      let mensaje = await actions.getAfiliacion(afiliaciones)
+      if (!mensaje) {
+        alert("algo salio mal")
+      } else {
+        setResponse(mensaje)
+      }
     } catch (e) {
       console.error(e)
     }
@@ -56,10 +62,17 @@ const Afiliaciones = () => {
                 <input type="text" className='input' name="nombre" onChange={handlerafiliacion} placeholder="nombre" aria-label="nombre" aria-describedby="addon-wrapping" />
               </div>
               <button className='login-button' onClick={handleConsulta}>
-              Consultar
-            </button>
+                Consultar
+              </button>
+
+              {response && (
+                <div className="answer-box mt-4 p-3 border rounded bg-light">
+                  <h4>Resultado:</h4>
+                  <p>{response}</p>
+                </div>
+              )}
             </div>
-            
+
           </div>
 
         )
