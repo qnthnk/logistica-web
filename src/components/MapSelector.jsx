@@ -169,15 +169,16 @@ const MapSelector = () => {
     return (
         <div>
             {token ? (
-                <div className='mb-3 position-absolute top-50 start-50 translate-middle'>
+                <div className='container'>
+                    <h3 className='heading'>Cartografía</h3>
 
                     {/* Selección de ámbito */}
-                    <div className='home-content d-flex flex-column w-60 p-2 bg-dark-subtle'>
-                        <h4>Ámbito</h4>
+                    <div className='fondos'>
+                    <h5 className='subheading'>Ámbito</h5>
                         <select
                             value={ambito}
                             onChange={handleAmbitoChange}
-                            className="block w-full text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose focus:border-rose inputs"
+                            className="input"
                         >
                             <option value="">Seleccionar Ámbito</option>
                             <option value="fed">Federal</option>
@@ -187,13 +188,12 @@ const MapSelector = () => {
                     <br />
 
                     {/* Selección de entidad */}
-                    <div className='home-content d-flex flex-column w-60 p-2 bg-dark-subtle'>
-                        <h4>Entidad</h4>
+                    <div className='fondos'>
+                    <h5 className='subheading'>Entidad</h5>
                         <select
                             value={selectedEntidad}
                             onChange={handleEntidadChange}
-                            className="block w-full text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose focus:border-rose inputs"
-                        >
+                            className="input"                        >
                             <option value="">Seleccionar Entidad</option>
                             {entidades.map((entidad) => (
                                 <option key={entidad} value={entidad}>
@@ -204,13 +204,12 @@ const MapSelector = () => {
                     </div>
                     <br />
                     {/* Selección de distrito */}
-                    <div className='home-content d-flex flex-column w-60 p-2 bg-dark-subtle'>
-                        <h4>Distrito</h4>
+                    <div className='fondos'>
+                    <h5 className='subheading'>Distrito</h5>
                         <select
                             value={selectedDistrito}
                             onChange={handleDistritoChange}
-                            className="block w-full text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose focus:border-rose inputs"
-                            disabled={!selectedEntidad}
+                            className="input"                            disabled={!selectedEntidad}
                         >
                             <option value="">Seleccionar Distrito</option>
                             {distritos.map((distrito) => (
@@ -222,13 +221,12 @@ const MapSelector = () => {
                     </div>
                     <br />
                     {/* Selección de sección */}
-                    <div className='home-content d-flex flex-column w-60 p-2 bg-dark-subtle'>
-                        <h4>Sección</h4>
+                    <div className='fondos'>
+                    <h5 className='subheading'>Sección</h5>
                         <select
                             value={selectedSeccion}
                             onChange={handleSeccionChange}
-                            className="block w-full text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose focus:border-rose inputs"
-                            disabled={!selectedDistrito}
+                            className="input"                            disabled={!selectedDistrito}
                         >
                             <option value="">Seleccionar Sección</option>
                             {secciones.map((seccion) => (
@@ -240,13 +238,15 @@ const MapSelector = () => {
                     </div>
                     <br />
                     {/* Botón para descargar */}
+                    <div className='fondos'>
                     <button
                         type="button"
                         onClick={handleDownload}
-                        className="text-black bg-warnin-800 hover:bg-succes-900 focus:outline-none focus:ring-4 focus:ring-succes-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 inputs position-absolute top-100 start-50 translate-middle btn btn-warning"
+                        className="login-button"
                     >
                         Descargar
                     </button>
+                    </div>
                 </div>
 
             ) : (
