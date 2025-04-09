@@ -13,6 +13,46 @@ const getState = ({ getStore, getActions, setStore }) => {
             currentResponse: {}
         },
         actions: {
+            sendMessage: async (data) => {
+                try {
+                    const response = await fetch('http://localhost:5000/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': '1803-1989-1803-1989'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta de la red.');
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error en sendMessage:', error);
+                    throw error;
+                }
+            },
+
+            closeChat: async () => {
+                try {
+                    const response = await fetch('http://localhost:5000/close_chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': '1803-1989-1803-1989'
+                        },
+                        body: JSON.stringify({}) // Enviamos un body vacío
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Error cerrando el chat.');
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error en closeChat:', error);
+                }
+            },
             askOpenAi: async (question) => {
                 const apiKey = process.env.REACT_APP_API_KEY
                 try {

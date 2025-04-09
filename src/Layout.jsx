@@ -14,6 +14,7 @@ import Directorio from './views/Directorio.jsx';
 import Footer from './components/Footer.jsx';
 import Utilidades from './views/Utilidades.jsx';
 import Legislacion from './views/Legislacion.jsx';
+import Chat from './views/Chat.jsx'
 
 const Layout = () => {
 
@@ -23,6 +24,7 @@ const Layout = () => {
     <div>
         <BrowserRouter basename={basename}>
             <Routes>
+                <Route exact path="/chat" element={<Chat/>}/>
                 <Route exact path="/" element={<Home/>}/>
                 <Route exact path="/home" element={<Home/>}/>
                 <Route exact path="/contact" element={<Contact/>}/>
